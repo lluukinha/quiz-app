@@ -1,3 +1,11 @@
+/*
+Este projeto foi feito por Lucas
+https://github.com/lluukinha
+
+Se for utilizá-lo, favor mencionar no seu projeto.
+Obrigado!
+*/
+
 import './animate.css'
 import './style.css'
 import './font-awesome'
