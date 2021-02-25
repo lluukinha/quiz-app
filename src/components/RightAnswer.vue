@@ -7,7 +7,7 @@
 
       <img :src="successImage" class="img-fluid">
 
-      <p class="text-justify mt-2 mb-1">
+      <p class="text-center mt-2 mb-1">
         {{ explanation }}
       </p>
 
@@ -22,7 +22,7 @@
 
 <script>
 export default {
-  name: 'RespostaCorreta',
+  name: 'RightAnswer',
 
   props: {
     explanation: {

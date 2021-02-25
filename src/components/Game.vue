@@ -1,14 +1,14 @@
 <template>
   <div class="container">
     <transition name="bounceDown" mode="out-in">
-      <Premios
+      <Prizes
         :currentIndex="currentIndex"
         v-if="!isGameRunning"
         @continue="continuePlaying()"
         @restartGame="restartGame()"
       />
 
-      <Perguntas
+      <Questions
         :currentQuestion="currentQuestion"
         v-if="isGameRunning"
         @goToNextQuestion="goToNextQuestion()"
@@ -19,16 +19,16 @@
 </template>
 
 <script>
-import Premios from "./Premios.vue";
-import Perguntas from "./Perguntas.vue";
-import gameAnswers from "../dados/perguntas.json";
+import Prizes from "./Prizes.vue";
+import Questions from "./Questions.vue";
+import gameQuestions from "../dados/perguntas.json";
 
 export default {
   name: 'Game',
 
   components: {
-    Premios,
-    Perguntas,
+    Prizes,
+    Questions,
   },
 
   data() {
@@ -41,7 +41,7 @@ export default {
   computed: {
     questions() {
       // This will return the questions shuffled
-      return gameAnswers.questions
+      return gameQuestions.questions
         .map(question => ({ sort: Math.random(), value: question }))
         .sort((a, b) => a.sort - b.sort)
         .map(question => question.value);

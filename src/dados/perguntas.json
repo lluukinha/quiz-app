@@ -8,7 +8,7 @@
         "Gênesis e Apocalipse",
         "Velho Testamento e Novo Testamento"
       ],
-      "correta": 2,
+      "correta": "Gênesis e Apocalipse",
       "explicacao": "Genesis é o Primeiro livro da bíblia. E Apocalipse o último."
     },
     {
@@ -19,7 +19,7 @@
         "Cruscificado",
         "Apedrejado"
       ],
-      "correta": 0,
+      "correta": "Enforcou-se",
       "explicacao": "A morte de Judas está relatada em Atos 1:18-19. Segundo o relato, ele «precipitou-se de cabeça para baixo, arrebentou pelo meio, e todas as suas entranhas se derramaram» (Atos 1:18) num local chamado 'Campo de Sangue'. Segundo Mateus 27, ele se enforcou depois de tentar devolver o dinheiro aos sacerdotes."
     },
     {
@@ -30,7 +30,7 @@
         "Abraão",
         "Noé"
       ],
-      "correta": 3,
+      "correta": "Noé",
       "explicacao": "A história de Arca de Noé, de acordo com os capítulos 6 a 9 do livro do Gênesis, começa quando Deus, observando o mau comportamento da Humanidade, decide a inundar a Terra e destruir toda vida. Deus encontrou um bom homem, Noé, 'um virtuoso homem, inocente entre o povo de seu tempo', e decidiu que este iria preceder uma nova linhagem do homem."
     },
     {
@@ -41,7 +41,7 @@
         "André",
         "Judas"
       ],
-      "correta": 0,
+      "correta": "Pedro",
       "explicacao": "Marcos 14:29 - Pedro exclamou: “Mesmo que todos te abandonem, eu nunca te deixarei!”."
     },
     {
@@ -52,7 +52,7 @@
         "Não roubar",
         "Desonrar pai e mãe"
       ],
-      "correta": 3,
+      "correta": "Desonrar pai e mãe",
       "explicacao": "O mandamento de ‘honrar seu pai e sua mãe’ aparece muitas vezes na Bíblia. (Êxodo 20:12; Deuteronômio 5:16; Mateus 15:4; Efésios 6:2, 3)"
     },
     {
@@ -63,7 +63,7 @@
         "Limpo de todo o mal",
         "Meu amigo"
       ],
-      "correta": 1,
+      "correta": "Pescador de Homens",
       "explicacao": "Lucas 5:10 - E disse Jesus a Simão: 'Não temas; de agora em diante serás pescador de homens.'"
     },
     {
@@ -74,7 +74,7 @@
         "Leão",
         "Elefante"
       ],
-      "correta": 2,
+      "correta": "Leão",
       "explicacao": "Juízes 14:5-6 - Desceu, pois, Sansão com seu pai e com sua mãe a Timnate; e chegando às vinhas de Timnate, eis que um leão novo, bramando, lhe saiu ao encontro. Então o Espírito do Senhor se apossou dele tão possantemente que Sansão o fendeu de alto a baixo, como quem fende um cabrito, sem ter nada na sua mão; porém nem a seu pai nem a sua mãe deu a saber o que tinha feito."
     },
     {
@@ -85,7 +85,7 @@
         "Feiticeiros",
         "Índios"
       ],
-      "correta": 1,
+      "correta": "Bárbaros",
       "explicacao": "Em Atos 28, Paulo descreve os nativos da ilha de Malta como Bárbaros"
     },
     {
@@ -96,7 +96,7 @@
         "Simei",
         "Oséias"
       ],
-      "correta": 2,
+      "correta": "Simei",
       "explicacao": "Samuel 16:5-6 - E chegando o Rei Davi a Baurim, eis que dali saiu um homem da linhagem da casa de Saul, cujo nome era Simei, filho de Gera, e saindo, ia amaldiçoando e apedrejava Davi, e em todos os servos do rei Davi; e todo o povo e todos os valentes iam à sua direita e à sua esquerda."
     },
     {
@@ -107,7 +107,7 @@
         "Monte Moriá",
         "Monte Carmelo"
       ],
-      "correta": 1,
+      "correta": "Monte Caveira",
       "explicacao": "Calvário ou Gólgota (em aramaico: Gûlgaltâ; em latim: Calvaria; em grego: Κρανιου Τοπος; transl.: Kraniou Topos) é a colina na qual Jesus foi crucificado e que, na época de Cristo, ficava fora da cidade de Jerusalém. O termo significa 'CAVEIRA', referindo-se a uma colina ou platô que contém uma pilha de crânios ou a um acidente geográfico que se assemelha a um crânio."
     },
     {
@@ -118,7 +118,7 @@
         "Moisés",
         "Adão"
       ],
-      "correta": 0,
+      "correta": "Enoque",
       "explicacao": "Gênesis 5:24 - Enoque continuou andando com o verdadeiro Deus. Depois, ele não foi mais visto, porque Deus o tomou."
     },
     {
@@ -129,7 +129,7 @@
         "Três dias",
         "Quatro dias"
       ],
-      "correta": 2,
+      "correta": "Três dias",
       "explicacao": "Lucas 24:6-7 - Ele não está aqui! Ressuscitou! Lembrem-se do que ele disse, quando ainda estava com vocês na Galileia: 'É necessário que o Filho do homem seja entregue nas mãos de homens pecadores, seja crucificado e ressuscite no terceiro dia'"
     }
   ]

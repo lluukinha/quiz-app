@@ -7,7 +7,7 @@
         @restartGame="$emit('restartGame')"
       />
 
-      <RespostaCorreta
+      <RightAnswer
         v-if="acertou && !isGameOver"
         :timeInSeconds="timeInSeconds"
         :explanation="currentQuestion.explicacao"
@@ -28,13 +28,13 @@
       <div class="col-md-8 mt-3">
         <ul class="list-group text-dark">
           <li
-            v-for="(resposta, index) in currentQuestion.respostas"
+            v-for="(alternative, index) in alternatives"
             @click="answerClicked(index)"
             :key="`answer_${index}`"
             class="list-group-item"
             :class="getClassesForAlternatives(index)"
           >
-            {{ resposta }}
+            {{ alternative }}
           </li>
         </ul>
 
@@ -54,14 +54,14 @@
 <script>
 import { setTimeout } from "timers";
 import GameOver from "./GameOver.vue";
-import RespostaCorreta from "./RespostaCorreta.vue";
+import RightAnswer from "./RightAnswer.vue";
 
 export default {
-  name: 'Perguntas',
+  name: 'Questions',
 
   components: {
     GameOver,
-    RespostaCorreta,
+    RightAnswer,
   },
 
   props: {
@@ -92,6 +92,13 @@ export default {
         || this.isGameOver
         || this.acertou;
     },
+    alternatives() {
+      // This will return the alternatives shuffled
+      return this.currentQuestion.respostas
+        .map(alternative => ({ sort: Math.random(), value: alternative }))
+        .sort((a, b) => a.sort - b.sort)
+        .map(alternative => alternative.value);
+    },
   },
 
   methods: {
@@ -110,9 +117,10 @@ export default {
     },
 
     checkForCorrectAnswer() {
-      const rightIndex = this.currentQuestion.correta;
+      const rightAnswer = this.currentQuestion.correta;
+      const chosenAnswer = this.alternatives[this.chosenIndex];
 
-      if (this.chosenIndex === rightIndex) {
+      if (chosenAnswer === rightAnswer) {
         this.acertou = true;
       } else {
         this.isGameOver = true;
