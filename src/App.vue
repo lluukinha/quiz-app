@@ -1,38 +1,44 @@
 <template>
-<transition
-  name="bounceDown"
-  mode="out-in"
->
-  <div
-    class="text-center mt-4"
-    id="app" v-if="!iniciar"
-  >
-    <h1>Bem vindo ao QUIZ</h1>
-    <h4>RESPONDA TODAS AS PERGUNTAS CORRETAMENTE</h4>
-    <button
-      @click="iniciar = true"
-      class="btn btn-dark btn-lg"
-    >
-      INICIAR
-    </button>
-  </div>
-  <game
-    v-on:voltar_inicio="iniciar = false"
-    v-else
-  />
+  <transition name="bounceDown" mode="out-in">
+    <div class="text-center mt-4" id="app" v-if="!isStarted">
+      <h1>Bem vindo ao QUIZ</h1>
+      <h4>RESPONDA TODAS AS PERGUNTAS CORRETAMENTE</h4>
+      <button
+        @click="startGame()"
+        class="btn btn-dark btn-lg"
+      >
+        INICIAR
+      </button>
+    </div>
+
+    <Game @restartGame="finishGame()" v-else />
 </transition>
 </template>
 
 <script>
-import game from "./components/Game.vue";
+import Game from "./components/Game.vue";
 
 export default {
+  name: 'App',
+
+  components: {
+    Game,
+  },
+
   data() {
     return {
-      iniciar: false
+      isStarted: false
     };
   },
-  components: { game }
+
+  methods: {
+    startGame() {
+      this.isStarted = true;
+    },
+    finishGame() {
+      this.isStarted = false;
+    },
+  },
 };
 </script>
 

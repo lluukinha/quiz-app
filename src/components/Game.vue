@@ -1,44 +1,75 @@
 <template>
   <div class="container">
     <transition name="bounceDown" mode="out-in">
-      <premios
-        :atual="atual"
-        v-if="!iniciar_jogo"
-        v-on:iniciar_jogo="iniciar_jogo = $event"
-        v-on:recomecar="voltar_inicio()"
+      <Premios
+        :currentIndex="currentIndex"
+        v-if="!isGameRunning"
+        @continue="continuePlaying()"
+        @restartGame="restartGame()"
       />
-      <perguntas
-        :atual="atual"
-        v-if="iniciar_jogo"
-        v-on:iniciar_jogo="iniciar_jogo = $event"
-        v-on:continuar="atual ++"
-        v-on:voltar_inicio="voltar_inicio()"
+
+      <Perguntas
+        :currentQuestion="currentQuestion"
+        v-if="isGameRunning"
+        @goToNextQuestion="goToNextQuestion()"
+        @restartGame="restartGame()"
       />
     </transition>
   </div>
 </template>
 
 <script>
-import premios from "./Premios.vue";
-import perguntas from "./Perguntas.vue";
+import Premios from "./Premios.vue";
+import Perguntas from "./Perguntas.vue";
+import gameAnswers from "../dados/perguntas.json";
 
 export default {
+  name: 'Game',
+
   components: {
-    premios,
-    perguntas,
+    Premios,
+    Perguntas,
   },
 
   data() {
     return {
-      iniciar_jogo: false,
-      atual: 0,
+      isGameRunning: false,
+      currentIndex: 0,
     };
   },
 
+  computed: {
+    questions() {
+      // This will return the questions shuffled
+      return gameAnswers.questions
+        .map(question => ({ sort: Math.random(), value: question }))
+        .sort((a, b) => a.sort - b.sort)
+        .map(question => question.value);
+    },
+    currentQuestion() {
+      return this.questions[this.currentIndex];
+    },
+  },
+
   methods: {
-    voltar_inicio() {
-      this.atual = 0;
-      this.$emit('voltar_inicio');
+    continuePlaying() {
+      this.isGameRunning = true;
+    },
+
+    stopPlaying() {
+      this.isGameRunning = false;
+    },
+
+    restartGame() {
+      this.currentIndex = 0;
+      this.$emit('restartGame');
+    },
+
+    goToNextQuestion() {
+      // show prizes
+      this.stopPlaying();
+      // go to next question
+      this.currentIndex += 1;
     },
   },
 };

@@ -1,22 +1,39 @@
 <template>
-    <div id="resposta_correta" class="text-center">
+    <div class="text-center resposta-correta">
+
       <h1>RESPOSTA CORRETA!</h1>
+
       <h4>Você acertou em {{ time }} segundos!</h4>
-      <img :src="img_correta" class="img-fluid">
-      <p class="text-justify mt-2 mb-1">{{ explicacao }}</p>
+
+      <img :src="successImage" class="img-fluid">
+
+      <p class="text-justify mt-2 mb-1">
+        {{ explanation }}
+      </p>
 
       <button
         class="btn btn-success"
-        @click="continuar()"
+        @click="$emit('goToNextQuestion')"
       >
-        PRÓXIMA PERGUNTA
+        CONTINUAR
       </button>
     </div>
 </template>
 
 <script>
 export default {
-  props: ["explicacao", "tempo"],
+  name: 'RespostaCorreta',
+
+  props: {
+    explanation: {
+      type: String,
+      required: true,
+    },
+    timeInSeconds: {
+      type: Number,
+      required: true,
+    },
+  },
 
   data() {
     return {
@@ -29,27 +46,19 @@ export default {
     };
   },
 
-  methods: {
-    continuar() {
-      this.$emit("continuar");
-      this.$emit("iniciar_jogo", false);
-    }
-  },
-
   computed: {
-    img_correta: function() {
-      let array = this.imgs;
-      return array[Math.floor(Math.random() * array.length)];
+    successImage() {
+      return this.imgs[Math.floor(Math.random() * this.imgs.length)];
     },
-    time: function() {
-      return 15 - this.tempo;
+    time() {
+      return 15 - this.timeInSeconds;
     },
   },
 };
 </script>
 
-<style>
-#resposta_correta {
+<style scoped>
+.resposta-correta {
   position: absolute;
   margin-left: auto;
   margin-right: auto;

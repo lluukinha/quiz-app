@@ -2,37 +2,37 @@
   <div>
     <transition name="bounce">
       <GameOver
-        v-if="game_over"
-        :motivo="motivo_gameover"
-        v-on:voltar_inicio="$emit('voltar_inicio')"
+        v-if="isGameOver"
+        :reason="gameOverReason"
+        @restartGame="$emit('restartGame')"
       />
+
       <RespostaCorreta
-        v-if="acertou && !game_over"
-        :tempo="tempo"
-        :explicacao="perguntas[atual].explicacao"
-        v-on:continuar="$emit('continuar')"
-        v-on:iniciar_jogo="$emit('iniciar_jogo',false)"
+        v-if="acertou && !isGameOver"
+        :timeInSeconds="timeInSeconds"
+        :explanation="currentQuestion.explicacao"
+        @goToNextQuestion="$emit('goToNextQuestion')"
       />
     </transition>
 
     <div class="row justify-content-center mt-3">
       <div class="tempo col-md-8 text-center mb-3">
-        {{ tempo }}
+        {{ timeInSeconds }}
       </div>
 
       <div class="box-question col-md-8 pt-3 pb-3 text-center text-dark">
         <h5>PERGUNTA:</h5>
-        <h2>{{ perguntas[atual].pergunta }}</h2>
+        <h2>{{ currentQuestion.pergunta }}</h2>
       </div>
 
       <div class="col-md-8 mt-3">
         <ul class="list-group text-dark">
           <li
-            v-for="(resposta, index) in perguntas[atual].respostas"
-            @click="!acertou && !game_over ? marcar_resposta(index) : ''"
-            :key="'resposta_' + atual + '_' + index"
+            v-for="(resposta, index) in currentQuestion.respostas"
+            @click="answerClicked(index)"
+            :key="`answer_${index}`"
             class="list-group-item"
-            :class="{ disabled: game_over, 'list-group-item-success' : resposta_marcada && number_checked == index}"
+            :class="getClassesForAlternatives(index)"
           >
             {{ resposta }}
           </li>
@@ -40,8 +40,9 @@
 
         <button
           class="btn btn-success btn-lg mt-3 btn-block"
-          @click="resposta_marcada ? check_resposta(number_checked,perguntas[atual].correta) : ''"
-          :class="!resposta_marcada || game_over ? 'disabled' : ''"
+          @click="checkForCorrectAnswer()"
+          :class="disableContinueButton ? 'disabled' : ''"
+          :disabled="disableContinueButton"
         >
           CONTINUAR
         </button>
@@ -54,65 +55,88 @@
 import { setTimeout } from "timers";
 import GameOver from "./GameOver.vue";
 import RespostaCorreta from "./RespostaCorreta.vue";
-import doc from "../dados/perguntas.json";
 
 export default {
+  name: 'Perguntas',
+
   components: {
     GameOver,
     RespostaCorreta,
   },
 
-  props: ["atual"],
+  props: {
+    currentQuestion: {
+      type: Object,
+      required: true,
+    },
+  },
 
   mounted() {
-    this.contar_tempo();
+    this.timeCount();
   },
 
   data() {
     return {
-      tempo: 15,
+      timeInSeconds: 15,
       acertou: false,
-      game_over: false,
-      motivo_gameover: "",
+      isGameOver: false,
+      gameOverReason: '',
       resposta_marcada: false,
-      number_checked: "",
-      perguntas: doc.questions
+      chosenIndex: null,
     };
   },
 
+  computed: {
+    disableContinueButton() {
+      return this.chosenIndex === null
+        || this.isGameOver
+        || this.acertou;
+    },
+  },
+
   methods: {
-    contar_tempo() {
-      if (this.tempo > 0 && !this.acertou) {
+    timeCount() {
+      if (this.timeInSeconds > 0 && !this.acertou) {
         setTimeout(() => {
-          this.tempo--;
-          this.contar_tempo();
+          this.timeInSeconds -= 1;
+          this.timeCount();
         }, 1000);
       }
 
-      if (this.tempo == 0) {
-        this.game_over = true;
-        this.motivo_gameover = "time";
+      if (this.timeInSeconds == 0) {
+        this.isGameOver = true;
+        this.gameOverReason = 'time';
       }
     },
 
-    check_resposta(clicada, correta) {
-      if (clicada == correta) {
+    checkForCorrectAnswer() {
+      const rightIndex = this.currentQuestion.correta;
+
+      if (this.chosenIndex === rightIndex) {
         this.acertou = true;
       } else {
-        this.game_over = true;
-        this.motivo_gameover = "answer";
+        this.isGameOver = true;
+        this.gameOverReason = 'answer';
       }
     },
 
-    marcar_resposta(numero) {
-      this.number_checked = numero;
-      this.resposta_marcada = true;
+    answerClicked(index) {
+      if (this.acertou || this.isGameOver) return;
+      this.chosenIndex = index;
+    },
+
+    getClassesForAlternatives(index) {
+      const isChecked = this.chosenIndex !== null && this.chosenIndex == index;
+      return {
+        disabled: this.isGameOver,
+        'list-group-item-success': isChecked
+      };
     },
   },
 };
 </script>
 
-<style>
+<style scoped>
 .tempo {
   font-size: 3rem;
   color: #ffffff;

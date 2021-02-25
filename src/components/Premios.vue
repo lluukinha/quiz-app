@@ -2,13 +2,13 @@
   <div class="row justify-content-center mt-3 mb-3">
     <div
       class="ct_box col-md-8 rounded bg-dark text-center text-light pt-4 pb-4"
-      v-if="atual > 11"
+      v-if="allQuestionsAnsweredCorrectly"
     >
       <h1>PARABÉNS!</h1>
-      <img :src="parabens" class="img-fluid mt-3 mb-3" />
+      <img :src="congratulationsImage" class="img-fluid mt-3 mb-3" />
       <h5>Chegamos ao fim! Mas você pode continuar clicando no botão abaixo.</h5>
       <button
-        @click="$emit('recomecar')"
+        @click="$emit('restartGame')"
         class="btn btn-success"
       >
         INICIAR NOVAMENTE
@@ -22,7 +22,7 @@
     >
       <h3 class="mt-3">PREMIAÇÃO</h3>
 
-      <h5>Pergunta atual: {{ atual + 1 }} - Valor: {{ premios[atual].valor }}</h5>
+      <h5>Pergunta atual: {{ currentQuestionNumber }} - Valor: {{ premios[currentIndex].valor }}</h5>
 
       <div class="row mt-3 mb-3 justify-content-center">
         <div class="col-6 col-md-4">
@@ -30,10 +30,10 @@
             <p
               v-if="index < 4"
               :key="'premio_'+index"
-              :class="atual > index ? 'passou' : ''"
+              :class="currentIndex > index ? 'passou' : ''"
             >
-              <span :class="atual == index ? 'btn btn-warning btn-sm' : ''">
-                <i v-show="atual == index" class="fas fa-check-square"></i>
+              <span :class="currentIndex == index ? 'btn btn-warning btn-sm' : ''">
+                <i v-show="currentIndex == index" class="fas fa-check-square"></i>
                 {{premio.valor}}
               </span>
             </p>
@@ -45,10 +45,10 @@
             <p
               v-if="index > 3 && index < 8"
               :key="'premio_'+index"
-              :class="atual > index ? 'passou' : ''"
+              :class="currentIndex > index ? 'passou' : ''"
             >
               <span
-                :class="atual == index ? 'btn btn-warning btn-sm' : ''"
+                :class="currentIndex == index ? 'btn btn-warning btn-sm' : ''"
               >
                 {{premio.valor}}
               </span>
@@ -61,10 +61,10 @@
             <p
               v-if="index > 7"
               :key="'premio_'+index"
-              :class="atual > index ? 'passou' : ''"
+              :class="currentIndex > index ? 'passou' : ''"
             >
-              <span :class="atual == index ? 'btn btn-warning btn-sm' : ''">
-                <i v-show="atual == index" class="fas fa-check-square"></i>
+              <span :class="currentIndex == index ? 'btn btn-warning btn-sm' : ''">
+                <i v-show="currentIndex == index" class="fas fa-check-square"></i>
                 {{premio.valor}}
               </span>
             </p>
@@ -73,7 +73,7 @@
 
         <div class="col-12 mb-3">
           <button
-            @click="$emit('iniciar_jogo','true')"
+            @click="$emit('continue')"
             class="btn btn-success"
           >
             CONTINUAR
@@ -86,18 +86,18 @@
 
 <script>
 export default {
-  props: ["atual"],
+  name: 'Premios',
 
-  computed: {
-    parabens() {
-      const array = this.img_parabens;
-      return array[Math.floor(Math.random() * array.length)];
-    }
+  props: {
+    currentIndex: {
+      type: Number,
+      required: true,
+    },
   },
 
   data() {
     return {
-      img_parabens: [
+      images: [
         "https://media.giphy.com/media/26DOoDwdNGKAg6UKI/giphy.gif",
         "https://media.giphy.com/media/g9582DNuQppxC/giphy.gif",
         "https://media.giphy.com/media/fxsqOYnIMEefC/giphy.gif",
@@ -118,7 +118,20 @@ export default {
         { id_pergunta: 11, valor: "R$1.000.000,00" }
       ]
     };
-  }
+  },
+
+  computed: {
+    congratulationsImage() {
+      return this.images[Math.floor(Math.random() * this.images.length)];
+    },
+    currentQuestionNumber() {
+      return this.currentIndex + 1;
+    },
+    allQuestionsAnsweredCorrectly() {
+      return this.currentIndex > 11;
+    },
+  },
+
 };
 </script>
 

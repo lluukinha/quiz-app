@@ -1,10 +1,10 @@
 <template>
-  <div id="game_over" class="text-center">
-    <h2 v-html="textoMotivo" class="mb-2" />
-    <img :src="imgErro" class="img-fluid" />
+  <div class="text-center game-over">
+    <h2 v-html="gameOverReason" class="mb-2" />
+    <img :src="errorImage" class="img-fluid" />
     <h5 class="mb-4 mt-2">FIM DE JOGO</h5>
     <button
-      @click="$emit('voltar_inicio')"
+      @click="$emit('restartGame')"
       class="btn btn-primary"
     >
       VOLTAR AO INÍCIO
@@ -14,31 +14,28 @@
 
 <script>
 export default {
-  props: {
-    motivo: {
-      type: String,
-    },
-  },
+  name: 'GameOver',
 
-  mounted() {
-    this.carregar_motivo();
+  props: {
+    reason: {
+      type: String,
+      required: true,
+    },
   },
 
   computed: {
-    imgErro() {
-      let array = this.imgs;
-      return array[Math.floor(Math.random() * array.length)];
+    errorImage() {
+      return this.imgs[Math.floor(Math.random() * this.imgs.length)];
     },
-    textoMotivo() {
-      if (this.motivo === 'time') return 'Ah não! O tempo acabou.';
-      if (this.motivo == "answer") return 'Ah não! Você errou!';
+    gameOverReason() {
+      if (this.reason === 'time') return 'Ah não! O tempo acabou.';
+      if (this.reason === 'answer') return 'Ah não! Você errou!';
       return '';
     },
   },
 
   data() {
     return {
-      texto_motivo: '',
       imgs: [
         'https://media.giphy.com/media/1etprqF7hJtBDjZv1R/giphy.gif',
         'https://media.giphy.com/media/eKrgVyZ7zLvJrgZNZn/giphy.gif',
@@ -50,8 +47,8 @@ export default {
 };
 </script>
 
-<style>
-#game_over {
+<style scoped>
+.game-over {
   position: absolute;
   margin-left: auto;
   margin-right: auto;
