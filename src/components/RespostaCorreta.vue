@@ -4,27 +4,38 @@
       <h4>Você acertou em {{ time }} segundos!</h4>
       <img :src="img_correta" class="img-fluid">
       <p class="text-justify mt-2 mb-1">{{ explicacao }}</p>
-      <button class="btn btn-success" @click="continuar()">PRÓXIMA PERGUNTA</button>
+
+      <button
+        class="btn btn-success"
+        @click="continuar()"
+      >
+        PRÓXIMA PERGUNTA
+      </button>
     </div>
 </template>
 
 <script>
 export default {
   props: ["explicacao", "tempo"],
+
   data() {
     return {
-      imgs: ["https://media.giphy.com/media/3o7abKhOpu0NwenH3O/giphy.gif",
-             "https://media.giphy.com/media/ckeHl52mNtoq87veET/giphy.gif",
-             "https://media.giphy.com/media/DffShiJ47fPqM/giphy.gif",
-             "https://media.giphy.com/media/1sv8xeMx3mG89zpZn7/giphy.gif"]
-    }
+      imgs: [
+        "https://media.giphy.com/media/3o7abKhOpu0NwenH3O/giphy.gif",
+        "https://media.giphy.com/media/ckeHl52mNtoq87veET/giphy.gif",
+        "https://media.giphy.com/media/DffShiJ47fPqM/giphy.gif",
+        "https://media.giphy.com/media/1sv8xeMx3mG89zpZn7/giphy.gif"
+      ],
+    };
   },
+
   methods: {
     continuar() {
       this.$emit("continuar");
       this.$emit("iniciar_jogo", false);
     }
   },
+
   computed: {
     img_correta: function() {
       let array = this.imgs;
@@ -32,8 +43,8 @@ export default {
     },
     time: function() {
       return 15 - this.tempo;
-    }
-  }
+    },
+  },
 };
 </script>
 

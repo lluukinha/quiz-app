@@ -1,112 +1,136 @@
 {
-"questions": [{
+  "questions": [
+    {
       "pergunta": "Qual o primeiro e o último livro da Bíblia?",
-      "respostas": ["Gênesis e Êxodo",
-                  "Números e Malaquias",
-                  "Gênesis e Apocalipse",
-                  "Velho Testamento e Novo Testamento"],
+      "respostas": [
+        "Gênesis e Êxodo",
+        "Números e Malaquias",
+        "Gênesis e Apocalipse",
+        "Velho Testamento e Novo Testamento"
+      ],
       "correta": 2,
       "explicacao": "Genesis é o Primeiro livro da bíblia. E Apocalipse o último."
     },
     {
       "pergunta": "Como Judas Iscariotes morreu?",
-      "respostas": ["Enforcou-se",
-                  "Afogou-se",
-                  "Cruscificado",
-                  "Apedrejado"],
+      "respostas": [
+        "Enforcou-se",
+        "Afogou-se",
+        "Cruscificado",
+        "Apedrejado"
+      ],
       "correta": 0,
       "explicacao": "A morte de Judas está relatada em Atos 1:18-19. Segundo o relato, ele «precipitou-se de cabeça para baixo, arrebentou pelo meio, e todas as suas entranhas se derramaram» (Atos 1:18) num local chamado 'Campo de Sangue'. Segundo Mateus 27, ele se enforcou depois de tentar devolver o dinheiro aos sacerdotes."
     },
     {
       "pergunta": "Quem construiu uma arca seguindo as ordens de Deus?",
-      "respostas": ["Davi",
-                  "Moisés",
-                  "Abraão",
-                  "Noé"],
+      "respostas": [
+        "Davi",
+        "Moisés",
+        "Abraão",
+        "Noé"
+      ],
       "correta": 3,
       "explicacao": "A história de Arca de Noé, de acordo com os capítulos 6 a 9 do livro do Gênesis, começa quando Deus, observando o mau comportamento da Humanidade, decide a inundar a Terra e destruir toda vida. Deus encontrou um bom homem, Noé, 'um virtuoso homem, inocente entre o povo de seu tempo', e decidiu que este iria preceder uma nova linhagem do homem."
     },
     {
       "pergunta": "Quem declarou a Jesus: 'Ainda que todos te abandonem, eu não te abandonarei!'?",
-      "respostas": ["Pedro",
-                  "João",
-                  "André",
-                  "Judas"],
+      "respostas": [
+        "Pedro",
+        "João",
+        "André",
+        "Judas"
+      ],
       "correta": 0,
       "explicacao": "Marcos 14:29 - Pedro exclamou: “Mesmo que todos te abandonem, eu nunca te deixarei!”."
     },
     {
       "pergunta": "Qual das alternativas constitui uma violação dos mandamentos divinos?",
-      "respostas": ["Perdoar uns aos outros",
-                  "Não adulterar",
-                  "Não roubar",
-                  "Desonrar pai e mãe"],
+      "respostas": [
+        "Perdoar uns aos outros",
+        "Não adulterar",
+        "Não roubar",
+        "Desonrar pai e mãe"
+      ],
       "correta": 3,
       "explicacao": "O mandamento de ‘honrar seu pai e sua mãe’ aparece muitas vezes na Bíblia. (Êxodo 20:12; Deuteronômio 5:16; Mateus 15:4; Efésios 6:2, 3)"
     },
     {
       "pergunta": "Jesus disse a Simão: Não tenha medo! De agora em diante você será _____________?",
-      "respostas": ["Salvo",
-                  "Pescador de Homens",
-                  "Limpo de todo o mal",
-                  "Meu amigo"],
+      "respostas": [
+        "Salvo",
+        "Pescador de Homens",
+        "Limpo de todo o mal",
+        "Meu amigo"
+      ],
       "correta": 1,
       "explicacao": "Lucas 5:10 - E disse Jesus a Simão: 'Não temas; de agora em diante serás pescador de homens.'"
     },
     {
       "pergunta": "Que animal Sansão matou com as próprias mãos?",
-      "respostas": ["Tigre",
-                  "Cobra",
-                  "Leão",
-                  "Elefante"],
+      "respostas": [
+        "Tigre",
+        "Cobra",
+        "Leão",
+        "Elefante"
+      ],
       "correta": 2,
       "explicacao": "Juízes 14:5-6 - Desceu, pois, Sansão com seu pai e com sua mãe a Timnate; e chegando às vinhas de Timnate, eis que um leão novo, bramando, lhe saiu ao encontro. Então o Espírito do Senhor se apossou dele tão possantemente que Sansão o fendeu de alto a baixo, como quem fende um cabrito, sem ter nada na sua mão; porém nem a seu pai nem a sua mãe deu a saber o que tinha feito."
     },
     {
       "pergunta": "Como eram chamados os habitantes da ilha de Malta?",
-      "respostas": ["Escravos",
-                  "Bárbaros",
-                  "Feiticeiros",
-                  "Índios"],
+      "respostas": [
+        "Escravos",
+        "Bárbaros",
+        "Feiticeiros",
+        "Índios"
+      ],
       "correta": 1,
       "explicacao": "Em Atos 28, Paulo descreve os nativos da ilha de Malta como Bárbaros"
     },
     {
       "pergunta": "Qual homem amaldiçoava e tacava pedras no Rei Davi?",
-      "respostas": ["Abner",
-                  "Ezequiel",
-                  "Simei",
-                  "Oséias"],
+      "respostas": [
+        "Abner",
+        "Ezequiel",
+        "Simei",
+        "Oséias"
+      ],
       "correta": 2,
       "explicacao": "Samuel 16:5-6 - E chegando o Rei Davi a Baurim, eis que dali saiu um homem da linhagem da casa de Saul, cujo nome era Simei, filho de Gera, e saindo, ia amaldiçoando e apedrejava Davi, e em todos os servos do rei Davi; e todo o povo e todos os valentes iam à sua direita e à sua esquerda."
     },
     {
       "pergunta": "Onde Jesus foi cruscificado?",
-      "respostas": ["Monte Horebe",
-                  "Monte Caveira",
-                  "Monte Moriá",
-                  "Monte Carmelo"],
+      "respostas": [
+        "Monte Horebe",
+        "Monte Caveira",
+        "Monte Moriá",
+        "Monte Carmelo"
+      ],
       "correta": 1,
       "explicacao": "Calvário ou Gólgota (em aramaico: Gûlgaltâ; em latim: Calvaria; em grego: Κρανιου Τοπος; transl.: Kraniou Topos) é a colina na qual Jesus foi crucificado e que, na época de Cristo, ficava fora da cidade de Jerusalém. O termo significa 'CAVEIRA', referindo-se a uma colina ou platô que contém uma pilha de crânios ou a um acidente geográfico que se assemelha a um crânio."
     },
     {
       "pergunta": "Qual dessas pessoas NÃO morreram?",
-      "respostas": ["Enoque",
-                    "Jesus",
-                    "Moisés",
-                    "Adão"],
+      "respostas": [
+        "Enoque",
+        "Jesus",
+        "Moisés",
+        "Adão"
+      ],
       "correta": 0,
       "explicacao": "Gênesis 5:24 - Enoque continuou andando com o verdadeiro Deus. Depois, ele não foi mais visto, porque Deus o tomou."
     },
     {
       "pergunta": "Quantos dias após sua morte, Jesus ressuscitou?",
-      "respostas": ["Um dia",
-                    "Dois dias",
-                    "Três dias",
-                    "Quatro dias"],
+      "respostas": [
+        "Um dia",
+        "Dois dias",
+        "Três dias",
+        "Quatro dias"
+      ],
       "correta": 2,
       "explicacao": "Lucas 24:6-7 - Ele não está aqui! Ressuscitou! Lembrem-se do que ele disse, quando ainda estava com vocês na Galileia: 'É necessário que o Filho do homem seja entregue nas mãos de homens pecadores, seja crucificado e ressuscite no terceiro dia'"
     }
-
   ]
 }

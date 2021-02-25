@@ -1,12 +1,12 @@
 <template>
   <div>
     <transition name="bounce">
-      <game-over
+      <GameOver
         v-if="game_over"
         :motivo="motivo_gameover"
         v-on:voltar_inicio="$emit('voltar_inicio')"
       />
-      <resposta-correta
+      <RespostaCorreta
         v-if="acertou && !game_over"
         :tempo="tempo"
         :explicacao="perguntas[atual].explicacao"
@@ -14,8 +14,12 @@
         v-on:iniciar_jogo="$emit('iniciar_jogo',false)"
       />
     </transition>
+
     <div class="row justify-content-center mt-3">
-      <div class="tempo col-md-8 text-center mb-3">{{ tempo }}</div>
+      <div class="tempo col-md-8 text-center mb-3">
+        {{ tempo }}
+      </div>
+
       <div class="box-question col-md-8 pt-3 pb-3 text-center text-dark">
         <h5>PERGUNTA:</h5>
         <h2>{{ perguntas[atual].pergunta }}</h2>
@@ -24,18 +28,23 @@
       <div class="col-md-8 mt-3">
         <ul class="list-group text-dark">
           <li
-            v-for="(r,i) in perguntas[atual].respostas"
-            @click="!acertou && !game_over ? marcar_resposta(i) : ''"
-            :key="'resposta_' + atual + '_' + i"
+            v-for="(resposta, index) in perguntas[atual].respostas"
+            @click="!acertou && !game_over ? marcar_resposta(index) : ''"
+            :key="'resposta_' + atual + '_' + index"
             class="list-group-item"
-            :class="{ disabled: game_over, 'list-group-item-success' : resposta_marcada && number_checked == i}"
-          >{{ r }}</li>
+            :class="{ disabled: game_over, 'list-group-item-success' : resposta_marcada && number_checked == index}"
+          >
+            {{ resposta }}
+          </li>
         </ul>
+
         <button
           class="btn btn-success btn-lg mt-3 btn-block"
           @click="resposta_marcada ? check_resposta(number_checked,perguntas[atual].correta) : ''"
           :class="!resposta_marcada || game_over ? 'disabled' : ''"
-        >CONTINUAR</button>
+        >
+          CONTINUAR
+        </button>
       </div>
     </div>
   </div>
@@ -46,12 +55,19 @@ import { setTimeout } from "timers";
 import GameOver from "./GameOver.vue";
 import RespostaCorreta from "./RespostaCorreta.vue";
 import doc from "../dados/perguntas.json";
+
 export default {
-  components: { GameOver, RespostaCorreta },
+  components: {
+    GameOver,
+    RespostaCorreta,
+  },
+
   props: ["atual"],
+
   mounted() {
     this.contar_tempo();
   },
+
   data() {
     return {
       tempo: 15,
@@ -63,6 +79,7 @@ export default {
       perguntas: doc.questions
     };
   },
+
   methods: {
     contar_tempo() {
       if (this.tempo > 0 && !this.acertou) {
@@ -77,6 +94,7 @@ export default {
         this.motivo_gameover = "time";
       }
     },
+
     check_resposta(clicada, correta) {
       if (clicada == correta) {
         this.acertou = true;
@@ -85,11 +103,12 @@ export default {
         this.motivo_gameover = "answer";
       }
     },
+
     marcar_resposta(numero) {
       this.number_checked = numero;
       this.resposta_marcada = true;
-    }
-  }
+    },
+  },
 };
 </script>
 

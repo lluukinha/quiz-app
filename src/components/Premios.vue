@@ -1,29 +1,34 @@
 <template>
   <div class="row justify-content-center mt-3 mb-3">
-    <div class="ct_box col-md-8 rounded bg-dark text-center text-light pt-4 pb-4" v-if="atual > 11">
+    <div
+      class="ct_box col-md-8 rounded bg-dark text-center text-light pt-4 pb-4"
+      v-if="atual > 11"
+    >
       <h1>PARABÉNS!</h1>
-      <img :src="parabens" class="img-fluid mt-3 mb-3">
+      <img :src="parabens" class="img-fluid mt-3 mb-3" />
       <h5>Chegamos ao fim! Mas você pode continuar clicando no botão abaixo.</h5>
-      <button @click="$emit('recomecar')" class="btn btn-success">INICIAR NOVAMENTE</button>
+      <button
+        @click="$emit('recomecar')"
+        class="btn btn-success"
+      >
+        INICIAR NOVAMENTE
+      </button>
     </div>
-    <div id="premiacao" class="ct_box col-md-8 rounded bg-dark text-center text-light" v-else>
+
+    <div
+      id="premiacao"
+      class="ct_box col-md-8 rounded bg-dark text-center text-light"
+      v-else
+    >
       <h3 class="mt-3">PREMIAÇÃO</h3>
+
       <h5>Pergunta atual: {{ atual + 1 }} - Valor: {{ premios[atual].valor }}</h5>
+
       <div class="row mt-3 mb-3 justify-content-center">
         <div class="col-6 col-md-4">
-          <template v-for="(premio,index) in premios">
-            <p v-if="index < 4" :key="'premio_'+index" :class="atual > index ? 'passou' : ''">
-              <span :class="atual == index ? 'btn btn-warning btn-sm' : ''">
-                <i v-show="atual == index" class="fas fa-check-square"></i>
-                {{premio.valor}}
-              </span>
-            </p>
-          </template>
-        </div>
-        <div class="col-6 col-md-4">
-          <template v-for="(premio,index) in premios">
+          <template v-for="(premio, index) in premios">
             <p
-              v-if="index > 3 && index < 8"
+              v-if="index < 4"
               :key="'premio_'+index"
               :class="atual > index ? 'passou' : ''"
             >
@@ -34,9 +39,30 @@
             </p>
           </template>
         </div>
+
         <div class="col-6 col-md-4">
           <template v-for="(premio,index) in premios">
-            <p v-if="index > 7" :key="'premio_'+index" :class="atual > index ? 'passou' : ''">
+            <p
+              v-if="index > 3 && index < 8"
+              :key="'premio_'+index"
+              :class="atual > index ? 'passou' : ''"
+            >
+              <span
+                :class="atual == index ? 'btn btn-warning btn-sm' : ''"
+              >
+                {{premio.valor}}
+              </span>
+            </p>
+          </template>
+        </div>
+
+        <div class="col-6 col-md-4">
+          <template v-for="(premio, index) in premios">
+            <p
+              v-if="index > 7"
+              :key="'premio_'+index"
+              :class="atual > index ? 'passou' : ''"
+            >
               <span :class="atual == index ? 'btn btn-warning btn-sm' : ''">
                 <i v-show="atual == index" class="fas fa-check-square"></i>
                 {{premio.valor}}
@@ -44,8 +70,14 @@
             </p>
           </template>
         </div>
+
         <div class="col-12 mb-3">
-          <button @click="$emit('iniciar_jogo','true')" class="btn btn-success">CONTINUAR</button>
+          <button
+            @click="$emit('iniciar_jogo','true')"
+            class="btn btn-success"
+          >
+            CONTINUAR
+          </button>
         </div>
       </div>
     </div>
@@ -55,12 +87,14 @@
 <script>
 export default {
   props: ["atual"],
+
   computed: {
-    parabens: function() {
-      let array = this.img_parabens;
+    parabens() {
+      const array = this.img_parabens;
       return array[Math.floor(Math.random() * array.length)];
     }
   },
+
   data() {
     return {
       img_parabens: [
