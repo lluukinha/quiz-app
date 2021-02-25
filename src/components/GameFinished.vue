@@ -15,23 +15,15 @@
 </template>
 
 <script>
+import gameImages from "../dados/images.json";
+
 export default {
   name: 'GameFinished',
 
-  data() {
-    return {
-      images: [
-        'https://media.giphy.com/media/26DOoDwdNGKAg6UKI/giphy.gif',
-        'https://media.giphy.com/media/g9582DNuQppxC/giphy.gif',
-        'https://media.giphy.com/media/fxsqOYnIMEefC/giphy.gif',
-        'https://media.giphy.com/media/7rj2ZgttvgomY/giphy.gif'
-      ],
-    };
-  },
-
   computed: {
     congratulationsImage() {
-      return this.images[Math.floor(Math.random() * this.images.length)];
+      const imagesArray = gameImages.right;
+      return imagesArray[Math.floor(Math.random() * imagesArray.length)];
     },
   },
 }

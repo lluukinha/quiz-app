@@ -1,0 +1,18 @@
+{
+    "right": [
+        "https://media.giphy.com/media/3o7abKhOpu0NwenH3O/giphy.gif",
+        "https://media.giphy.com/media/ckeHl52mNtoq87veET/giphy.gif",
+        "https://media.giphy.com/media/DffShiJ47fPqM/giphy.gif",
+        "https://media.giphy.com/media/1sv8xeMx3mG89zpZn7/giphy.gif",
+        "https://media.giphy.com/media/26DOoDwdNGKAg6UKI/giphy.gif",
+        "https://media.giphy.com/media/g9582DNuQppxC/giphy.gif",
+        "https://media.giphy.com/media/fxsqOYnIMEefC/giphy.gif",
+        "https://media.giphy.com/media/7rj2ZgttvgomY/giphy.gif"
+    ],
+    "wrong": [
+        "https://media.giphy.com/media/1etprqF7hJtBDjZv1R/giphy.gif",
+        "https://media.giphy.com/media/eKrgVyZ7zLvJrgZNZn/giphy.gif",
+        "https://media.giphy.com/media/NxARrx3czdQaY/giphy.gif",
+        "https://media.giphy.com/media/W5YVAfSttCqre/giphy.gif"
+    ]
+}

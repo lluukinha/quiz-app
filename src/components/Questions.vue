@@ -134,10 +134,10 @@ export default {
     },
 
     getClassesForAlternatives(index) {
-      const isChecked = this.chosenIndex !== null && this.chosenIndex == index;
+      const isClicked = this.chosenIndex !== null && this.chosenIndex == index;
       return {
         disabled: this.isGameOver,
-        'list-group-item-success': isChecked
+        'list-group-item-success': isClicked
       };
     },
   },

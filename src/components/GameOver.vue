@@ -13,6 +13,8 @@
 </template>
 
 <script>
+import gameImages from "../dados/images.json";
+
 export default {
   name: 'GameOver',
 
@@ -25,24 +27,14 @@ export default {
 
   computed: {
     errorImage() {
-      return this.imgs[Math.floor(Math.random() * this.imgs.length)];
+      const imagesArray = gameImages.wrong;
+      return imagesArray[Math.floor(Math.random() * imagesArray.length)];
     },
     gameOverReason() {
       if (this.reason === 'time') return 'Ah não! O tempo acabou.';
       if (this.reason === 'answer') return 'Ah não! Você errou!';
       return '';
     },
-  },
-
-  data() {
-    return {
-      imgs: [
-        'https://media.giphy.com/media/1etprqF7hJtBDjZv1R/giphy.gif',
-        'https://media.giphy.com/media/eKrgVyZ7zLvJrgZNZn/giphy.gif',
-        'https://media.giphy.com/media/NxARrx3czdQaY/giphy.gif',
-        'https://media.giphy.com/media/W5YVAfSttCqre/giphy.gif'
-      ],
-    };
   },
 };
 </script>

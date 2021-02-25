@@ -21,6 +21,8 @@
 </template>
 
 <script>
+import gameImages from "../dados/images.json";
+
 export default {
   name: 'RightAnswer',
 
@@ -35,20 +37,10 @@ export default {
     },
   },
 
-  data() {
-    return {
-      imgs: [
-        "https://media.giphy.com/media/3o7abKhOpu0NwenH3O/giphy.gif",
-        "https://media.giphy.com/media/ckeHl52mNtoq87veET/giphy.gif",
-        "https://media.giphy.com/media/DffShiJ47fPqM/giphy.gif",
-        "https://media.giphy.com/media/1sv8xeMx3mG89zpZn7/giphy.gif"
-      ],
-    };
-  },
-
   computed: {
     successImage() {
-      return this.imgs[Math.floor(Math.random() * this.imgs.length)];
+      const imagesArray = gameImages.right;
+      return imagesArray[Math.floor(Math.random() * imagesArray.length)];
     },
     time() {
       return 15 - this.timeInSeconds;
