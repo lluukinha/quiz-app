@@ -1,18 +1,19 @@
 <template>
-  <transition name="bounceDown" mode="out-in">
-    <div class="text-center mt-4" id="app" v-if="!isStarted">
-      <h1>Bem vindo ao QUIZ</h1>
-      <h4>RESPONDA TODAS AS PERGUNTAS CORRETAMENTE</h4>
-      <button
-        @click="startGame()"
-        class="btn btn-dark btn-lg"
-      >
-        INICIAR
-      </button>
-    </div>
-
-    <Game @restartGame="finishGame()" v-else />
-</transition>
+  <div id="app" class="container">
+    <transition name="bounceDown" mode="out-in">
+      <div class="text-center mt-4" v-if="!isStarted">
+        <div class="mb-4">
+          <h1>{{ $t('home-title') }}</h1>
+          <h4>{{ $t('home-subtitle') }}</h4>
+          <h5>{{ $t('home-description') }}</h5>
+        </div>
+        <button @click="startGame()" class="btn btn-success btn-lg">
+          {{ $t('common-start') }}
+        </button>
+      </div>
+      <Game @restartGame="finishGame()" v-else />
+    </transition>
+  </div>
 </template>
 
 <script>

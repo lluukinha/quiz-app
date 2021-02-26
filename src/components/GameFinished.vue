@@ -1,17 +1,15 @@
 <template>
   <div class="box col-md-8 rounded bg-dark text-center text-light pt-4 pb-4">
-    <h1>PARABÉNS!</h1>
+    <h1>{{ $t('lastpage-congratulations') }}</h1>
 
-    <img :src="congratulationsImage" class="img-fluid mt-3 mb-3" />
+    <img class="img-fluid mt-3 mb-3" :src="congratulationsImage" />
 
-    <h5>
-      Chegamos ao fim! Mas você pode começar novamente clicando no botão abaixo.
-    </h5>
+    <h5>{{ $t('lastpage-message') }}</h5>
 
     <button @click="$emit('restartGame')" class="btn btn-success">
-      INICIAR NOVAMENTE
+      {{ $t('common-start-again') }}
     </button>
-    </div>
+  </div>
 </template>
 
 <script>

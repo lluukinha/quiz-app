@@ -1,3 +1,23 @@
 {
-    "test": "Very nice test"
+    "common-continue": "Continuar",
+    "common-question": "Pergunta",
+    "common-start": "Iniciar",
+    "common-start-again": "Iniciar Novamente",
+
+    "game-over": "FIM DE JOGO",
+    "game-over-time": "Ah não! O tempo acabou.",
+    "game-over-answer": "Ah não! Você errou!",
+
+    "home-title": "Bem vindo ao Quiz",
+    "home-subtitle": "Responda todas as perguntas corretamente",
+    "home-description": "Todos os prêmios mencionados são fictícios, mas isso você já sabe né?",
+
+    "lastpage-congratulations": "PARABÉNS!",
+    "lastpage-message": "Chegamos ao fim! Mas você pode começar novamente clicando no botão abaixo.",
+
+    "prizes": "PREMIAÇÃO",
+    "prizes-current-question": "Pergunta atual: {questionNumber} - Valor: {value}",
+
+    "right-answer": "RESPOSTA CORRETA!",
+    "right-answer-time": "Você acertou em {time} segundos!"
 }

@@ -10,7 +10,7 @@
       class="ct_box col-md-8 rounded bg-dark text-center text-light"
       v-else
     >
-      <h3 class="mt-3">PREMIAÇÃO</h3>
+      <h3 class="mt-3">{{ $t('prizes') }}</h3>
 
       <h5>{{ currentPrizeMessage }}</h5>
 
@@ -18,11 +18,11 @@
         <div class="col-6 col-md-4">
           <p
             v-for="prize in firstBarPrizes"
-            :key="`premio_${prize.id}`"
+            :key="`prize_${prize.id}`"
             :class="currentIndex > prize.id ? 'passed' : ''"
           >
             <span :class="classForPrize(prize.id)">
-              {{ prize.valor }}
+              {{ prize.value }}
             </span>
           </p>
         </div>
@@ -30,11 +30,11 @@
         <div class="col-6 col-md-4">
           <p
             v-for="prize in secondBarPrizes"
-            :key="`premio_${prize.id}`"
+            :key="`prize_${prize.id}`"
             :class="currentIndex > prize.id ? 'passed' : ''"
           >
             <span :class="classForPrize(prize.id)">
-              {{ prize.valor }}
+              {{ prize.value }}
             </span>
           </p>
         </div>
@@ -42,11 +42,11 @@
         <div class="col-6 col-md-4">
           <p
             v-for="prize in lastBarPrizes"
-            :key="`premio_${prize.id}`"
+            :key="`prize_${prize.id}`"
             :class="currentIndex > prize.id ? 'passed' : ''"
           >
             <span :class="classForPrize(prize.id)">
-              {{ prize.valor }}
+              {{ prize.value }}
             </span>
           </p>
         </div>
@@ -56,7 +56,7 @@
             @click="$emit('continue')"
             class="btn btn-success"
           >
-            CONTINUAR
+            {{ $t('common-continue') }}
           </button>
         </div>
       </div>
@@ -83,47 +83,69 @@ export default {
 
   data() {
     return {
-      premios: [
-        { id: 0, valor: "R$1.000,00" },
-        { id: 1, valor: "R$2.000,00" },
-        { id: 2, valor: "R$5.000,00" },
-        { id: 3, valor: "R$10.000,00" },
-        { id: 4, valor: "R$25.000,00" },
-        { id: 5, valor: "R$50.000,00" },
-        { id: 6, valor: "R$100.000,00" },
-        { id: 7, valor: "R$200.000,00" },
-        { id: 8, valor: "R$300.000,00" },
-        { id: 9, valor: "R$400.000,00" },
-        { id: 10, valor: "R$500.000,00" },
-        { id: 11, valor: "R$1.000.000,00" }
+      prizes: [
+        { id: 0, value: 1000 },
+        { id: 1, value: 2000 },
+        { id: 2, value: 5000 },
+        { id: 3, value: 10000 },
+        { id: 4, value: 25000 },
+        { id: 5, value: 50000 },
+        { id: 6, value: 100000 },
+        { id: 7, value: 200000 },
+        { id: 8, value: 300000 },
+        { id: 9, value: 400000 },
+        { id: 10, value: 500000 },
+        { id: 11, value: 1000000 }
       ]
     };
   },
 
   computed: {
+    formattedPrizes() {
+      const currencyData = { style: "currency", currency: "BRL" };
+
+      return this.prizes
+        .map((prize) => {
+          return {
+            id: prize.id,
+            value: prize.value.toLocaleString("pt-BR", currencyData),
+          };
+        });
+    },
+
     firstBarPrizes() {
-      return this.premios
+      return this.formattedPrizes
         .filter(prize => prize.id < 4);
     },
+
     secondBarPrizes() {
-      return this.premios
+      return this.formattedPrizes
         .filter(prize => prize.id > 3 && prize.id < 8);
     },
+
     lastBarPrizes() {
-      return this.premios
+      return this.formattedPrizes
         .filter(prize => prize.id > 7);
     },
+
     currentQuestionNumber() {
       return this.currentIndex + 1;
     },
+
     allQuestionsAnsweredCorrectly() {
       return this.currentIndex > 11;
     },
+
     currentPrize() {
-      return this.premios[this.currentIndex];
+      return this.formattedPrizes[this.currentIndex];
     },
+
     currentPrizeMessage() {
-      return `Pergunta atual: ${this.currentQuestionNumber} - Valor: ${this.currentPrize.valor}`;
+      const variables = {
+        questionNumber: this.currentQuestionNumber,
+        value: this.currentPrize.value,
+      };
+      return this.$t('prizes-current-question', variables);
     },
   },
 

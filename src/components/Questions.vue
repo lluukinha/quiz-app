@@ -21,7 +21,7 @@
       </div>
 
       <div class="box-question col-md-8 pt-3 pb-3 text-center text-dark">
-        <h5>PERGUNTA:</h5>
+        <h5>{{ $t('common-question') }}:</h5>
         <h2>{{ currentQuestion.pergunta }}</h2>
       </div>
 
@@ -44,7 +44,7 @@
           :class="disableContinueButton ? 'disabled' : ''"
           :disabled="disableContinueButton"
         >
-          CONTINUAR
+          {{ $t('common-continue') }}
         </button>
       </div>
     </div>

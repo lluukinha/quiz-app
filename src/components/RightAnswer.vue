@@ -1,11 +1,11 @@
 <template>
     <div class="text-center right-answer">
 
-      <h1>RESPOSTA CORRETA!</h1>
+      <h1>{{ $t('right-answer') }}</h1>
 
-      <h4>Você acertou em {{ time }} segundos!</h4>
+      <h4>{{ $t('right-answer-time', { time }) }}</h4>
 
-      <img :src="successImage" class="img-fluid">
+      <img :src="successImage" class="img-fluid" />
 
       <p class="text-center mt-2 mb-1">
         {{ explanation }}
@@ -15,7 +15,7 @@
         class="btn btn-success"
         @click="$emit('goToNextQuestion')"
       >
-        CONTINUAR
+        {{ $t('common-continue') }}
       </button>
     </div>
 </template>

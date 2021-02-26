@@ -1,13 +1,15 @@
 <template>
   <div class="text-center game-over">
-    <h2 v-html="gameOverReason" class="mb-2" />
+    <h2 class="mb-2">
+      {{ $t(`game-over-${reason}`) }}
+    </h2>
+
     <img :src="errorImage" class="img-fluid" />
-    <h5 class="mb-4 mt-2">FIM DE JOGO</h5>
-    <button
-      @click="$emit('restartGame')"
-      class="btn btn-primary"
-    >
-      VOLTAR AO INÍCIO
+
+    <h5 class="mb-4 mt-2">{{ $t('game-over') }}</h5>
+
+    <button @click="$emit('restartGame')" class="btn btn-primary">
+      {{ $t('common-start-again') }}
     </button>
   </div>
 </template>
@@ -29,11 +31,6 @@ export default {
     errorImage() {
       const imagesArray = gameImages.wrong;
       return imagesArray[Math.floor(Math.random() * imagesArray.length)];
-    },
-    gameOverReason() {
-      if (this.reason === 'time') return 'Ah não! O tempo acabou.';
-      if (this.reason === 'answer') return 'Ah não! Você errou!';
-      return '';
     },
   },
 };
