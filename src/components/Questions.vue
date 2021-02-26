@@ -8,7 +8,7 @@
       />
 
       <RightAnswer
-        v-if="acertou && !isGameOver"
+        v-if="isRight && !isGameOver"
         :timeInSeconds="timeInSeconds"
         :explanation="currentQuestion.explicacao"
         @goToNextQuestion="$emit('goToNextQuestion')"
@@ -16,7 +16,7 @@
     </transition>
 
     <div class="row justify-content-center mt-3">
-      <div class="tempo col-md-8 text-center mb-3">
+      <div class="time col-md-8 text-center mb-3">
         {{ timeInSeconds }}
       </div>
 
@@ -78,10 +78,9 @@ export default {
   data() {
     return {
       timeInSeconds: 15,
-      acertou: false,
+      isRight: false,
       isGameOver: false,
       gameOverReason: '',
-      resposta_marcada: false,
       chosenIndex: null,
     };
   },
@@ -90,7 +89,7 @@ export default {
     disableContinueButton() {
       return this.chosenIndex === null
         || this.isGameOver
-        || this.acertou;
+        || this.isRight;
     },
     alternatives() {
       // This will return the alternatives shuffled
@@ -103,7 +102,7 @@ export default {
 
   methods: {
     timeCount() {
-      if (this.timeInSeconds > 0 && !this.acertou) {
+      if (this.timeInSeconds > 0 && !this.isRight) {
         setTimeout(() => {
           this.timeInSeconds -= 1;
           this.timeCount();
@@ -121,7 +120,7 @@ export default {
       const chosenAnswer = this.alternatives[this.chosenIndex];
 
       if (chosenAnswer === rightAnswer) {
-        this.acertou = true;
+        this.isRight = true;
       } else {
         this.isGameOver = true;
         this.gameOverReason = 'answer';
@@ -129,7 +128,7 @@ export default {
     },
 
     answerClicked(index) {
-      if (this.acertou || this.isGameOver) return;
+      if (this.isRight || this.isGameOver) return;
       this.chosenIndex = index;
     },
 
@@ -145,7 +144,7 @@ export default {
 </script>
 
 <style scoped>
-.tempo {
+.time {
   font-size: 3rem;
   color: #ffffff;
   font-weight: bold;

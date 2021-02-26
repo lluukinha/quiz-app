@@ -19,7 +19,7 @@
           <p
             v-for="prize in firstBarPrizes"
             :key="`premio_${prize.id}`"
-            :class="currentIndex > prize.id ? 'passou' : ''"
+            :class="currentIndex > prize.id ? 'passed' : ''"
           >
             <span :class="classForPrize(prize.id)">
               {{ prize.valor }}
@@ -31,7 +31,7 @@
           <p
             v-for="prize in secondBarPrizes"
             :key="`premio_${prize.id}`"
-            :class="currentIndex > prize.id ? 'passou' : ''"
+            :class="currentIndex > prize.id ? 'passed' : ''"
           >
             <span :class="classForPrize(prize.id)">
               {{ prize.valor }}
@@ -43,7 +43,7 @@
           <p
             v-for="prize in lastBarPrizes"
             :key="`premio_${prize.id}`"
-            :class="currentIndex > prize.id ? 'passou' : ''"
+            :class="currentIndex > prize.id ? 'passed' : ''"
           >
             <span :class="classForPrize(prize.id)">
               {{ prize.valor }}
@@ -138,7 +138,7 @@ export default {
 </script>
 
 <style scoped>
-.passou {
+.passed {
   text-decoration: line-through !important;
 }
 </style>

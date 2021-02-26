@@ -1,5 +1,5 @@
 <template>
-    <div class="text-center resposta-correta">
+    <div class="text-center right-answer">
 
       <h1>RESPOSTA CORRETA!</h1>
 
@@ -50,7 +50,7 @@ export default {
 </script>
 
 <style scoped>
-.resposta-correta {
+.right-answer {
   position: absolute;
   margin-left: auto;
   margin-right: auto;
