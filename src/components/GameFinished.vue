@@ -27,8 +27,5 @@ export default {
 }
 </script>
 
-<style scoped>
-.box {
-  box-shadow: 2px 3px 12px black;
-}
+<style>
 </style>

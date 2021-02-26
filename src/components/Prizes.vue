@@ -6,8 +6,7 @@
     />
 
     <div
-      id="premiacao"
-      class="ct_box col-md-8 rounded bg-dark text-center text-light"
+      class="box col-md-8 rounded bg-dark text-center text-light"
       v-else
     >
       <h3 class="mt-3">{{ $t('prizes') }}</h3>

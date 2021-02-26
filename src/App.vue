@@ -59,4 +59,8 @@ h1, h2, h3 {
 #app {
   color: white;
 }
+
+.box {
+  box-shadow: 2px 3px 12px black;
+}
 </style>
