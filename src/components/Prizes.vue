@@ -102,13 +102,16 @@ export default {
 
   computed: {
     formattedPrizes() {
-      const currencyData = { style: "currency", currency: "BRL" };
+      const currency = process.env.VUE_APP_CURRENCY;
+      const lang = process.env.VUE_APP_I18N_LOCALE;
+
+      const currencyData = { style: "currency", currency };
 
       return this.prizes
         .map((prize) => {
           return {
             id: prize.id,
-            value: prize.value.toLocaleString("pt-BR", currencyData),
+            value: prize.value.toLocaleString(lang, currencyData),
           };
         });
     },
