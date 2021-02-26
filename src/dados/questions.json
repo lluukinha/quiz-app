@@ -1,0 +1,147 @@
+{
+  "questions": [
+    {
+      "question": "Qual o primeiro e o último livro da Bíblia?",
+      "alternatives": [
+        "Gênesis e Êxodo",
+        "Números e Malaquias",
+        "Gênesis e Apocalipse",
+        "Velho Testamento e Novo Testamento"
+      ],
+      "rightAnswer": "Gênesis e Apocalipse",
+      "explanation": "Genesis é o Primeiro livro da bíblia. E Apocalipse o último."
+    },
+    {
+      "question": "Como Judas Iscariotes morreu?",
+      "alternatives": [
+        "Enforcou-se",
+        "Afogou-se",
+        "Cruscificado",
+        "Apedrejado"
+      ],
+      "rightAnswer": "Enforcou-se",
+      "explanation": "A morte de Judas está relatada em Atos 1:18-19. Segundo o relato, ele «precipitou-se de cabeça para baixo, arrebentou pelo meio, e todas as suas entranhas se derramaram» (Atos 1:18) num local chamado 'Campo de Sangue'. Segundo Mateus 27, ele se enforcou depois de tentar devolver o dinheiro aos sacerdotes."
+    },
+    {
+      "question": "Quem construiu uma arca seguindo as ordens de Deus?",
+      "alternatives": [
+        "Davi",
+        "Moisés",
+        "Abraão",
+        "Noé"
+      ],
+      "rightAnswer": "Noé",
+      "explanation": "A história de Arca de Noé, de acordo com os capítulos 6 a 9 do livro do Gênesis, começa quando Deus, observando o mau comportamento da Humanidade, decide a inundar a Terra e destruir toda vida. Deus encontrou um bom homem, Noé, 'um virtuoso homem, inocente entre o povo de seu tempo', e decidiu que este iria preceder uma nova linhagem do homem."
+    },
+    {
+      "question": "Quem declarou a Jesus: 'Ainda que todos te abandonem, eu não te abandonarei!'?",
+      "alternatives": [
+        "Pedro",
+        "João",
+        "André",
+        "Judas"
+      ],
+      "rightAnswer": "Pedro",
+      "explanation": "Marcos 14:29 - Pedro exclamou: “Mesmo que todos te abandonem, eu nunca te deixarei!”."
+    },
+    {
+      "question": "Qual das alternativas constitui uma violação dos mandamentos divinos?",
+      "alternatives": [
+        "Perdoar uns aos outros",
+        "Não adulterar",
+        "Não roubar",
+        "Desonrar pai e mãe"
+      ],
+      "rightAnswer": "Desonrar pai e mãe",
+      "explanation": "O mandamento de ‘honrar seu pai e sua mãe’ aparece muitas vezes na Bíblia. (Êxodo 20:12; Deuteronômio 5:16; Mateus 15:4; Efésios 6:2, 3)"
+    },
+    {
+      "question": "Jesus disse a Simão: Não tenha medo! De agora em diante você será _____________?",
+      "alternatives": [
+        "Salvo",
+        "Pescador de Homens",
+        "Limpo de todo o mal",
+        "Meu amigo"
+      ],
+      "rightAnswer": "Pescador de Homens",
+      "explanation": "Lucas 5:10 - E disse Jesus a Simão: 'Não temas; de agora em diante serás pescador de homens.'"
+    },
+    {
+      "question": "Que animal Sansão matou com as próprias mãos?",
+      "alternatives": [
+        "Tigre",
+        "Cobra",
+        "Leão",
+        "Elefante"
+      ],
+      "rightAnswer": "Leão",
+      "explanation": "Juízes 14:5-6 - Desceu, pois, Sansão com seu pai e com sua mãe a Timnate; e chegando às vinhas de Timnate, eis que um leão novo, bramando, lhe saiu ao encontro. Então o Espírito do Senhor se apossou dele tão possantemente que Sansão o fendeu de alto a baixo, como quem fende um cabrito, sem ter nada na sua mão; porém nem a seu pai nem a sua mãe deu a saber o que tinha feito."
+    },
+    {
+      "question": "Como eram chamados os habitantes da ilha de Malta?",
+      "alternatives": [
+        "Escravos",
+        "Bárbaros",
+        "Feiticeiros",
+        "Índios"
+      ],
+      "rightAnswer": "Bárbaros",
+      "explanation": "Em Atos 28, Paulo descreve os nativos da ilha de Malta como Bárbaros"
+    },
+    {
+      "question": "Qual homem amaldiçoava e tacava pedras no Rei Davi?",
+      "alternatives": [
+        "Abner",
+        "Ezequiel",
+        "Simei",
+        "Oséias"
+      ],
+      "rightAnswer": "Simei",
+      "explanation": "Samuel 16:5-6 - E chegando o Rei Davi a Baurim, eis que dali saiu um homem da linhagem da casa de Saul, cujo nome era Simei, filho de Gera, e saindo, ia amaldiçoando e apedrejava Davi, e em todos os servos do rei Davi; e todo o povo e todos os valentes iam à sua direita e à sua esquerda."
+    },
+    {
+      "question": "Onde Jesus foi cruscificado?",
+      "alternatives": [
+        "Monte Horebe",
+        "Monte Caveira",
+        "Monte Moriá",
+        "Monte Carmelo"
+      ],
+      "rightAnswer": "Monte Caveira",
+      "explanation": "Calvário ou Gólgota (em aramaico: Gûlgaltâ; em latim: Calvaria; em grego: Κρανιου Τοπος; transl.: Kraniou Topos) é a colina na qual Jesus foi crucificado e que, na época de Cristo, ficava fora da cidade de Jerusalém. O termo significa 'CAVEIRA', referindo-se a uma colina ou platô que contém uma pilha de crânios ou a um acidente geográfico que se assemelha a um crânio."
+    },
+    {
+      "question": "Qual dessas pessoas NÃO morreram?",
+      "alternatives": [
+        "Enoque",
+        "Jesus",
+        "Moisés",
+        "Adão"
+      ],
+      "rightAnswer": "Enoque",
+      "explanation": "Gênesis 5:24 - Enoque continuou andando com o verdadeiro Deus. Depois, ele não foi mais visto, porque Deus o tomou."
+    },
+    {
+      "question": "Quantos dias após sua morte, Jesus ressuscitou?",
+      "alternatives": [
+        "Um dia",
+        "Dois dias",
+        "Três dias",
+        "Quatro dias"
+      ],
+      "rightAnswer": "Três dias",
+      "explanation": "Lucas 24:6-7 - Ele não está aqui! Ressuscitou! Lembrem-se do que ele disse, quando ainda estava com vocês na Galileia: 'É necessário que o Filho do homem seja entregue nas mãos de homens pecadores, seja crucificado e ressuscite no terceiro dia'"
+    },
+    {
+      "question": "Qual arma Davi usou para degolar Golias?",
+      "alternatives": [
+        "Uma Funda",
+        "Uma Espada",
+        "Cinco Pedras",
+        "Um Pedaço de Pau"
+      ],
+      "rightAnswer": "Uma Espada",
+      "explanation": "1 Samuel 17:51 - Pelo que correu Davi, e, lançando-se sobre o filisteu, tomou-lhe a espada, e desembainhou-a, e o matou, cortando-lhe com ela a cabeça. Vendo os filisteus que era morto o seu herói, fugiram."
+    }
+  ]
+}

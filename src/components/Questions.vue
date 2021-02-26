@@ -10,7 +10,7 @@
       <RightAnswer
         v-if="isRight && !isGameOver"
         :timeInSeconds="timeInSeconds"
-        :explanation="currentQuestion.explicacao"
+        :explanation="currentQuestion.explanation"
         @goToNextQuestion="$emit('goToNextQuestion')"
       />
     </transition>
@@ -22,7 +22,7 @@
 
       <div class="box-question col-md-8 pt-3 pb-3 text-center text-dark">
         <h5>{{ $t('common-question') }}:</h5>
-        <h2>{{ currentQuestion.pergunta }}</h2>
+        <h2>{{ currentQuestion.question }}</h2>
       </div>
 
       <div class="col-md-8 mt-3">
@@ -93,7 +93,7 @@ export default {
     },
     alternatives() {
       // This will return the alternatives shuffled
-      return this.currentQuestion.respostas
+      return this.currentQuestion.alternatives
         .map(alternative => ({ sort: Math.random(), value: alternative }))
         .sort((a, b) => a.sort - b.sort)
         .map(alternative => alternative.value);
@@ -116,7 +116,7 @@ export default {
     },
 
     checkForCorrectAnswer() {
-      const rightAnswer = this.currentQuestion.correta;
+      const rightAnswer = this.currentQuestion.rightAnswer;
       const chosenAnswer = this.alternatives[this.chosenIndex];
 
       if (chosenAnswer === rightAnswer) {

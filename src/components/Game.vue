@@ -21,7 +21,7 @@
 <script>
 import Prizes from "./Prizes.vue";
 import Questions from "./Questions.vue";
-import gameQuestions from "../dados/perguntas.json";
+import gameQuestions from "../dados/questions.json";
 
 export default {
   name: 'Game',
@@ -41,10 +41,13 @@ export default {
   computed: {
     questions() {
       // This will return the questions shuffled
-      return gameQuestions.questions
+      const questions = gameQuestions.questions
         .map(question => ({ sort: Math.random(), value: question }))
         .sort((a, b) => a.sort - b.sort)
         .map(question => question.value);
+
+      // Return 12 questions only
+      return questions.slice(0, 12);
     },
     currentQuestion() {
       return this.questions[this.currentIndex];
