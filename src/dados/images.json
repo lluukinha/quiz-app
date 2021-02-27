@@ -2,12 +2,16 @@
     "right": [
         "baby.webp",
         "minions.webp",
-        "spongebob.webp",
+        "friends2.webp",
         "thor.webp",
-        "friends.webp"
+        "friends.webp",
+        "shakira.webp"
     ],
     "wrong": [
         "brokenheart.webp",
-        "kid.webp"
+        "kid.webp",
+        "thumbdown.webp",
+        "noo.webp",
+        "joey.webp"
     ]
 }

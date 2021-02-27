@@ -8,6 +8,7 @@
     "game-over": "FIM DE JOGO",
     "game-over-time": "Ah não! O tempo acabou.",
     "game-over-answer": "Ah não! Você errou!",
+    "game-over-right-answer": "Resposta correta",
 
     "home-title": "Bem vindo ao {title}",
     "home-subtitle": "Responda todas as perguntas corretamente",

@@ -175,6 +175,38 @@
       ],
       "rightAnswer": "66 livros",
       "explanation": "A Bíblia é uma coletânea composta por 66 livros, que foram escritos em hebraico, aramaico e grego e vai de Gênesis a Apocalipse."
+    },
+    {
+      "question": "Quem foi a mulher de Nabal?",
+      "alternatives": [
+        "Sara",
+        "Lia",
+        "Raquel",
+        "Abigail"
+      ],
+      "rightAnswer": "Abigail",
+      "explanation": "1 Samuel 25:3 - Seu nome era Nabal e o nome de sua mulher era Abigail, mulher inteligente e bonita; mas seu marido, descendente de Calebe, era rude e mau."
+    },
+    {
+      "question": "Jacó foi casado com duas mulheres que eram irmãs, quem são elas?",
+      "alternatives": [
+        "Lia e Raquel",
+        "Rebeca e Raquel",
+        "Bila e Diná",
+        "Zipa e Lia"
+      ],
+      "rightAnswer": "Lia e Raquel",
+      "explanation": "Genêsis 29:25 - Jacó casou com duas mulheres irmãs. Ele amava Raquel, e serviu seu sogro Labão durante sete anos para casar-se com ela. Mas na noite de núpcias foi enganado e recebeu Lia, irmã de Raquel."
+    },
+    {
+      "question": "Após Jesus ter realizado o milagre da multiplicação dos pães e peixes, quantos cestos sobraram com comida?",
+      "alternatives": [
+        "13 cestos",
+        "15 cestos",
+        "12 cestos",
+        "11 cestos"
+      ],
+      "explanation": "João 6:12-13 - Depois que todos comeram o suficiente, disse aos seus discípulos: Agora ajuntem os pedaços que sobraram, para que não se perca nada. Então eles encheram 12 cestos com os pedaços que sobraram."
     }
   ]
 }

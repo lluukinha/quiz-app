@@ -6,8 +6,17 @@
 
     <img :src="errorImage" class="img-fluid" />
 
-    <h5 class="mb-4 mt-2">{{ $t('game-over') }}</h5>
-
+    <h5 class="mb-4 mt-2">
+      <template v-if="reason === 'time'">
+        {{ $t('game-over') }}
+      </template>
+      <template v-else>
+        {{ $t('game-over-right-answer') }}: {{ currentQuestion.rightAnswer }}
+      </template>
+    </h5>
+    <p v-if="reason === 'answer'">
+      {{ currentQuestion.explanation }}
+    </p>
     <button @click="$emit('restartGame')" class="btn btn-primary">
       {{ $t('common-start-again') }}
     </button>
@@ -23,6 +32,10 @@ export default {
   props: {
     reason: {
       type: String,
+      required: true,
+    },
+    currentQuestion: {
+      type: Object,
       required: true,
     },
   },

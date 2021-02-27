@@ -2,16 +2,17 @@
   <div>
     <transition name="bounce">
       <GameOver
-        v-if="isGameOver"
         :reason="gameOverReason"
+        :currentQuestion="currentQuestion"
         @restartGame="$emit('restartGame')"
+        v-if="isGameOver"
       />
 
       <RightAnswer
-        v-if="isRight && !isGameOver"
         :timeInSeconds="timeInSeconds"
         :explanation="currentQuestion.explanation"
         @goToNextQuestion="$emit('goToNextQuestion')"
+        v-if="isRight && !isGameOver"
       />
     </transition>
 
