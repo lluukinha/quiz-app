@@ -21,7 +21,8 @@ export default {
   computed: {
     congratulationsImage() {
       const imagesArray = gameImages.right;
-      return imagesArray[Math.floor(Math.random() * imagesArray.length)];
+      const image = imagesArray[Math.floor(Math.random() * imagesArray.length)];
+      return require(`../assets/images/right/${image}`);
     },
   },
 }

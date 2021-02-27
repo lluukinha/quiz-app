@@ -30,7 +30,8 @@ export default {
   computed: {
     errorImage() {
       const imagesArray = gameImages.wrong;
-      return imagesArray[Math.floor(Math.random() * imagesArray.length)];
+      const image = imagesArray[Math.floor(Math.random() * imagesArray.length)];
+      return require(`../assets/images/wrong/${image}`);
     },
   },
 };

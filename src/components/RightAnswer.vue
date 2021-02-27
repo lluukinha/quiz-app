@@ -40,7 +40,8 @@ export default {
   computed: {
     successImage() {
       const imagesArray = gameImages.right;
-      return imagesArray[Math.floor(Math.random() * imagesArray.length)];
+      const image = imagesArray[Math.floor(Math.random() * imagesArray.length)];
+      return require(`../assets/images/right/${image}`);
     },
     time() {
       return 15 - this.timeInSeconds;
