@@ -142,6 +142,39 @@
       ],
       "rightAnswer": "Uma Espada",
       "explanation": "1 Samuel 17:51 - Pelo que correu Davi, e, lançando-se sobre o filisteu, tomou-lhe a espada, e desembainhou-a, e o matou, cortando-lhe com ela a cabeça. Vendo os filisteus que era morto o seu herói, fugiram."
+    },
+    {
+      "question": "Qual o nome e a idade da pessoa mais velha mencionada na Bíblia?",
+      "alternatives": [
+        "Enos, viveu 905 anos",
+        "Noé, viveu 990 anos",
+        "Matusalém, viveu 969 anos",
+        "Rainha Ester, viveu 859 anos"
+      ],
+      "rightAnswer": "Matusalém, viveu 969 anos",
+      "explanation": "Gênesis 5:21-27 - Matusalém (ou Metusalém) viveu 969 anos. Ele era filho de Enoque, que andou com Deus e foi o avô de Noé."
+    },
+    {
+      "question": "Qual desses não teve o seu nome mudado na Bíblia?",
+      "alternatives": [
+        "Sara",
+        "Abraão",
+        "Jacó",
+        "Davi"
+      ],
+      "rightAnswer": "Davi",
+      "explanation": "Davi não teve seu nome mudado. Sara era Sarai (Gn.17:15), Abraão era Abrão (Gn. 17:5) e Jacó tornou-se Israel (Gn. 32.28)"
+    },
+    {
+      "question": "A Bíblia é composta por quantos livros?",
+      "alternatives": [
+        "88 livros",
+        "37 livros",
+        "66 livros",
+        "100 livros"
+      ],
+      "rightAnswer": "66 livros",
+      "explanation": "A Bíblia é uma coletânea composta por 66 livros, que foram escritos em hebraico, aramaico e grego e vai de Gênesis a Apocalipse."
     }
   ]
 }

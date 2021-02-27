@@ -3,7 +3,7 @@
     <transition name="bounceDown" mode="out-in">
       <div class="text-center mt-4" v-if="!isStarted">
         <div class="mb-4">
-          <h1>{{ $t('home-title') }}</h1>
+          <h1>{{ $t('home-title', { title: title }) }}</h1>
           <h4>{{ $t('home-subtitle') }}</h4>
           <h5>{{ $t('home-description') }}</h5>
         </div>
@@ -28,7 +28,8 @@ export default {
 
   data() {
     return {
-      isStarted: false
+      title: process.env.VUE_APP_TITLE,
+      isStarted: false,
     };
   },
 

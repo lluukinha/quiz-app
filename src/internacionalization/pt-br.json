@@ -1,5 +1,6 @@
 {
     "common-continue": "Continuar",
+    "common-jump": "Pular",
     "common-question": "Pergunta",
     "common-start": "Iniciar",
     "common-start-again": "Iniciar Novamente",
@@ -8,7 +9,7 @@
     "game-over-time": "Ah não! O tempo acabou.",
     "game-over-answer": "Ah não! Você errou!",
 
-    "home-title": "Bem vindo ao Quiz",
+    "home-title": "Bem vindo ao {title}",
     "home-subtitle": "Responda todas as perguntas corretamente",
     "home-description": "Todos os prêmios mencionados são fictícios, mas isso você já sabe né?",
 

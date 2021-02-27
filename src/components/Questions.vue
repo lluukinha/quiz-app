@@ -38,14 +38,26 @@
           </li>
         </ul>
 
-        <button
-          class="btn btn-success btn-lg mt-3 btn-block"
-          @click="checkForCorrectAnswer()"
-          :class="disableContinueButton ? 'disabled' : ''"
-          :disabled="disableContinueButton"
-        >
-          {{ $t('common-continue') }}
-        </button>
+        <div class="d-flex justify-space-around">
+          <button
+            class="btn btn-dark btn-lg mt-3 btn-block"
+            :class="cantJumpQuestion ? 'disabled' : ''"
+            :disabled="cantJumpQuestion"
+            @click="jumpQuestion()"
+          >
+            {{ $t('common-jump') }}
+            <span class="small">({{ jumps }})</span>
+          </button>
+
+          <button
+            class="btn btn-success btn-lg mt-3 btn-block"
+            :class="disableContinueButton ? 'disabled' : ''"
+            :disabled="disableContinueButton"
+            @click="checkForCorrectAnswer()"
+          >
+            {{ $t('common-continue') }}
+          </button>
+        </div>
       </div>
     </div>
   </div>
@@ -69,6 +81,10 @@ export default {
       type: Object,
       required: true,
     },
+    jumps: {
+      type: Number,
+      required: true,
+    },
   },
 
   mounted() {
@@ -86,11 +102,18 @@ export default {
   },
 
   computed: {
+    cantJumpQuestion() {
+      return this.jumps === 0
+        || this.isGameOver
+        || this.isRight;
+    },
+
     disableContinueButton() {
       return this.chosenIndex === null
         || this.isGameOver
         || this.isRight;
     },
+
     alternatives() {
       // This will return the alternatives shuffled
       return this.currentQuestion.alternatives
@@ -101,6 +124,22 @@ export default {
   },
 
   methods: {
+    timeOut() {
+      this.isGameOver = true;
+      this.gameOverReason = 'time';
+    },
+
+    jumpQuestion() {
+      if (this.cantJumpQuestion) return;
+      this.timeInSeconds = 15;
+      this.$emit('jump');
+    },
+
+    wrongAnswer() {
+      this.isGameOver = true;
+      this.gameOverReason = 'answer';
+    },
+
     timeCount() {
       if (this.timeInSeconds > 0 && !this.isRight) {
         setTimeout(() => {
@@ -109,10 +148,7 @@ export default {
         }, 1000);
       }
 
-      if (this.timeInSeconds == 0) {
-        this.isGameOver = true;
-        this.gameOverReason = 'time';
-      }
+      if (this.timeInSeconds == 0 && !this.isGameOver) this.timeOut();
     },
 
     checkForCorrectAnswer() {
@@ -122,8 +158,7 @@ export default {
       if (chosenAnswer === rightAnswer) {
         this.isRight = true;
       } else {
-        this.isGameOver = true;
-        this.gameOverReason = 'answer';
+        this.wrongAnswer();
       }
     },
 

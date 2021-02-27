@@ -10,9 +10,11 @@
 
       <Questions
         :currentQuestion="currentQuestion"
-        v-if="isGameRunning"
+        :jumps="availableJumps"
         @goToNextQuestion="goToNextQuestion()"
         @restartGame="restartGame()"
+        @jump="jumpQuestion()"
+        v-if="isGameRunning"
       />
     </transition>
   </div>
@@ -35,26 +37,33 @@ export default {
     return {
       isGameRunning: false,
       currentIndex: 0,
+      availableJumps: 3,
+      questions: [],
     };
   },
 
-  computed: {
-    questions() {
-      // This will return the questions shuffled
-      const questions = gameQuestions.questions
-        .map(question => ({ sort: Math.random(), value: question }))
-        .sort((a, b) => a.sort - b.sort)
-        .map(question => question.value);
+  mounted() {
+    this.loadQuestions();
+  },
 
-      // Return 12 questions only
-      return questions.slice(0, 12);
-    },
+  computed: {
     currentQuestion() {
       return this.questions[this.currentIndex];
     },
   },
 
   methods: {
+    loadQuestions() {
+      // This will return the questions shuffled
+      const questions = gameQuestions.questions
+        .map(question => ({ sort: Math.random(), value: question }))
+        .sort((a, b) => a.sort - b.sort)
+        .map(question => question.value);
+
+      // Return 15 questions only (12 for the game + 3 jumps)
+      this.questions = questions.slice(0, 15);
+    },
+
     continuePlaying() {
       this.isGameRunning = true;
     },
@@ -73,6 +82,11 @@ export default {
       this.stopPlaying();
       // go to next question
       this.currentIndex += 1;
+    },
+
+    jumpQuestion() {
+      this.availableJumps -= 1;
+      this.questions.splice(this.currentIndex, 1);
     },
   },
 };
