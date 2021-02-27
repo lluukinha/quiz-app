@@ -208,6 +208,83 @@
       ],
       "rightAnswer": "12 cestos",
       "explanation": "João 6:12-13 - Depois que todos comeram o suficiente, disse aos seus discípulos: Agora ajuntem os pedaços que sobraram, para que não se perca nada. Então eles encheram 12 cestos com os pedaços que sobraram."
+    },
+    {
+      "question": "Que mulher usou um disfarce para falar com o profeta Aías?",
+      "alternatives": [
+        "A esposa de Jeroboão",
+        "A esposa de Davi",
+        "A esposa de Jacó",
+        "A esposa de Adão"
+      ],
+      "rightAnswer": "A esposa de Jeroboão",
+      "explanation": "1 Reis 14:1-2 - Então Abias, filho de Jeroboão, ficou muito doente. Joeroboão disse a sua esposa: Arranje um disfarce qualquer para que ninguém a conheça, e vá procurar o profeta Aías, em Siló."
+    },
+    {
+      "question": "Deus deu a Ana um filho após anos de esterilidade, quem é esse filho?",
+      "alternatives": [
+        "Saul",
+        "Samuel",
+        "Davi",
+        "Isaque"
+      ],
+      "rightAnswer": "Samuel",
+      "explanation": "1 Samuel 1:20 - Ana ficou grávida e, no devido tempo, teve um filho, e deu a ele o nome de Samuel, dizendo: Eu o pedi ao Senhor."
+    },
+    {
+      "question": "Quem foi a única mulher com status de juíza na Bíblia?",
+      "alternatives": [
+        "Ana",
+        "Ester",
+        "Maria",
+        "Débora"
+      ],
+      "rightAnswer": "Débora",
+      "explanation": "Débora foi profetisa e a quarta juíza de Israel. Sua história está descrita no Livro de Juízes, capítulos 4 e 5. Ela, juntamente com Baraque, liderou os israelitas contra o domínio de Canaã. Ela é a única mulher citada na Bíblia a ter o status de juíza."
+    },
+    {
+      "question": "Como não é descrito o Amor de 1 Coríntios 13?",
+      "alternatives": [
+        "É paciente",
+        "É bondoso",
+        "Nunca é grosseiro",
+        "Arde em ciúmes"
+      ],
+      "rightAnswer": "Arde em ciúmes",
+      "explanation": "Em 1 Coríntios 13: 4-5 diz que o amor é paciente e bondoso, nunca é invejoso ou ciumento, nunca é presunçoso nem orgulhoso, nunca é grosseiro, nem egoísta."
+    },
+    {
+      "question": "Como são considerados os lábios mentirosos de Safira e Ananias na Bíblia?",
+      "alternatives": [
+        "São abomináveis ao Senhor",
+        "São exaltados pelo Senhor",
+        "São aceitáveis pelo Senhor",
+        "São abençoados pelo Senhor"
+      ],
+      "rightAnswer": "São abomináveis ao Senhor",
+      "explanation": "Proverbíos 12:22 diz que os lábios mentirosos são abomináveis ao Senhor, mas os que agem fielmente são o seu prazer."
+    },
+    {
+      "question": "Somos salvos por meio...",
+      "alternatives": [
+        "Das obras",
+        "Da graça",
+        "Das atitudes",
+        "Da caridade"
+      ],
+      "rightAnswer": "Da graça",
+      "explanation": "Efésios 2:8-9 diz: Pois vocês são salvos pela graça, por meio da fé, e isto não vem de vocês, é dom de Deus; não por obras, para que ninguém se glorie."
+    },
+    {
+      "question": "Do que era feito o perfume caro que Maria de Betânia derramou sobre os pés de Jesus?",
+      "alternatives": [
+        "De essência de mirra",
+        "De essência de lírios dos vales",
+        "De essência de nardo",
+        "De essência de bálsamo"
+      ],
+      "rightAnswer": "De essência de nardo",
+      "explanation": "João 12:3 - Então Maria de Betânia tomou um frasco de perfume caro feito de essência de nardo e derramou-o sobre os pés de Jesus, enxugando-os com o cabelo dela. A casa encheu-se com a fragrância do perfume."
     }
   ]
 }
